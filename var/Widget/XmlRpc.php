@@ -1394,6 +1394,9 @@ class Widget_XmlRpc extends Widget_Abstract_Contents implements Widget_Interface
         $input['tags'] = isset($content['mt_keywords']) ? $content['mt_keywords'] : NULL;
         $input['category'] = array();
 
+        /** 增加自定义字段的设置 **/
+        $input['fields'] = isset($content['custom_fields']) ? json_decode($content['custom_fields'],true) : array();
+        
         if (isset($content['postId'])) {
             $input['cid'] = $content['postId'];
         }
